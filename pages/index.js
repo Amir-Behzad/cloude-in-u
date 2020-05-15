@@ -1,209 +1,516 @@
-import Head from 'next/head'
+import Footer from "../components/footer/footer";
+import Navbar from "../components/navbar/nav";
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>CloudeInU</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/zeit/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <Navbar />
+      {/* <!--Hero--> */}
+      <div
+        className="py-20 h-screen"
+        style={{
+          background: "url('/cloude-bg.svg')",
+        }}
+      >
+        <div className="container mx-auto px-6 py-10">
+          <div className="flex mb-4">
+            <div className="w-1/2 p-2">
+              <h1 className="text-5xl font-bold mb-2 text-yellow-300">
+                Cloude In U
+              </h1>
+              <h2 className="text-4xl font-bold mb-2 text-yellow-300">
+                Bulut Sunucusu
+              </h2>
+              <h3 className="text-2xl mb-8">
+                Güvenilir, Ekonomik, Kolay
+              </h3>
+              {/* bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full */}
+              <button className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-indigo-800 text-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+                <Link href="/sign-up">
+                  <a>Sign Up</a>
+                </Link>
+              </button>
+            </div>
+            <div className="w-1/2 p-2 text-center">
+              <img src="/guide-tr.gif" alt="guide" />
+            </div>
+          </div>
         </div>
-      </main>
+      </div>
+      {/* <!-- Features --> */}
+      <section className="container mx-auto px-6 p-10">
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+          Features
+        </h2>
+        <div className="flex items-center flex-wrap mb-20">
+          <div className="w-full md:w-1/2">
+            <h4 className="text-3xl text-gray-800 font-bold mb-3">
+              Exercise Metrics
+            </h4>
+            <p className="text-gray-600 mb-8">
+              Our Smart Health Monitoring Wristwatch is able to capture you
+              vitals while you exercise. You can create different category of
+              exercises and can track your vitals on the go.
+            </p>
+          </div>
+          <div className="w-50 md:w-1/2">
+            <img src="/cloude-db.svg" alt="Monitoring" />
+          </div>
+        </div>
+        <div className="flex items-center flex-wrap mb-20">
+          <div className="w-full md:w-1/2">
+            <img src="/email.svg" alt="Reporting" />
+          </div>
+          <div className="w-full md:w-1/2 pl-10">
+            <h4 className="text-3xl text-gray-800 font-bold mb-3">Reporting</h4>
+            <p className="text-gray-600 mb-8">
+              Our Smart Health Monitoring Wristwatch can generate a
+              comprehensive report on your vitals depending on your settings
+              either daily, weekly, monthly, quarterly or yearly.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center flex-wrap mb-20">
+          <div className="w-full md:w-1/2">
+            <h4 className="text-3xl text-gray-800 font-bold mb-3">Syncing</h4>
+            <p className="text-gray-600 mb-8">
+              Our Smart Health Monitoring Wristwatch allows you to sync data
+              across all your mobile devices whether iOS, Android or Windows OS
+              and also to your laptop whether MacOS, GNU/LInux or Windows OS.
+            </p>
+          </div>
+          <div className="w-full md:w-1/2">
+            <img src="analysis.svg" alt="Syncing" />
+          </div>
+        </div>
+      </section>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
+      {/* Steps Guide */}
+      <section className="max-w-5xl mx-auto py-10">
+        <div>
+          <div className="flex flex-row">
+            <div className="hidden md:flex flex-col items-center">
+              <div className="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
+                <div className="text-3xl font-black text-gray-500">Step 1</div>
+                <div className="text-gray-500 text-sm">Idea</div>
+              </div>
+              <div className="h-full border-l-4 border-transparent">
+                <div className="border-l-4 mr-4 h-full border-gray-300 border-dashed"></div>
+              </div>
+            </div>
+            <div className="flex-auto border rounded  border-gray-300">
+              <div className="flex md:flex-row flex-col items-center">
+                <div className="flex-auto">
+                  <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
+                    <span className="font-black">Step 1</span> - Idea
+                  </div>
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    Find your best idea
+                  </div>
+                  <div className="px-3 pb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam facilis, voluptates error alias dolorem praesentium
+                    sit soluta iure incidunt labore explicabo eaque, quia
+                    architecto veritatis dolores, enim consequatur nihil ipsum.
+                  </div>
+                </div>
+                <div className="md:w-96 w-full p-5">
+                  <img
+                    src="https://image.flaticon.com/icons/svg/1330/1330216.svg"
+                    alt="step 1"
+                    className="object-scale-down"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start flex-row">
+            <div className="border-t-4 border-r-4 border-transparent">
+              <div className="w-16 ml-16 h-16 border-l-4 border-gray-300 border-dashed border-b-4 rounded-bl-full"></div>
+            </div>
+            <div className="border-t-4 border-transparent flex-auto">
+              <div className="h-16 border-b-4 border-gray-300 border-dashed"></div>
+            </div>
+            <div className="w-16 mt-16 mr-16 h-16 border-r-4 border-gray-300 border-dashed border-t-4 rounded-tr-full"></div>
+          </div>
+          <div className="flex flex-row-reverse">
+            <div className="hidden md:flex flex-col items-center">
+              <div className="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
+                <div className="text-3xl font-black text-gray-500">Step 2</div>
+                <div className="text-gray-500 text-sm">Collaboration</div>
+              </div>
+              <div className="h-full border-r-4 border-transparent">
+                <div className="border-l-4 ml-4 h-full border-gray-300 border-dashed"></div>
+              </div>
+            </div>
+            <div className="flex-auto border rounded  border-gray-300">
+              <div className="flex md:flex-row flex-col items-center">
+                <div className="flex-auto">
+                  <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
+                    <span className="font-black">Step 2</span> - Collaboration
+                  </div>
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    Find your team and collaborate
+                  </div>
+                  <div className="px-3 pb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam facilis, voluptates error alias dolorem praesentium
+                    sit soluta iure incidunt labore explicabo eaque, quia
+                    architecto veritatis dolores, enim consequatur nihil ipsum.
+                  </div>
+                </div>
+                <div className="md:w-96 w-full p-5">
+                  <img
+                    src="https://image.flaticon.com/icons/svg/1330/1330216.svg"
+                    alt="step 2"
+                    className="object-scale-down"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start flex-row-reverse">
+            <div className="border-t-4 border-l-4 border-transparent">
+              <div className="w-16 mr-16 h-16 border-r-4 border-gray-300 border-dashed border-b-4 rounded-br-full"></div>
+            </div>
+            <div className="border-t-4 border-transparent flex-auto">
+              <div className="h-16 border-b-4 border-gray-300 border-dashed"></div>
+            </div>
+            <div className="w-16 mt-16 ml-16 h-16 border-l-4 border-gray-300 border-dashed border-t-4 rounded-tl-full"></div>
+          </div>
+          <div className="flex flex-row">
+            <div className="hidden md:flex flex-col items-center">
+              <div className="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
+                <div className="text-3xl font-black text-gray-500">Step 3</div>
+                <div className="text-gray-500 text-sm">Planification</div>
+              </div>
+              <div className="h-full border-l-4 border-transparent">
+                <div className="border-l-4 mr-4 h-full border-gray-300 border-dashed"></div>
+              </div>
+            </div>
+            <div className="flex-auto border rounded  border-gray-300">
+              <div className="flex md:flex-row flex-col items-center">
+                <div className="flex-auto">
+                  <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
+                    <span className="font-black">Step 3</span> - Planification
+                  </div>
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    Make a good plan and prepare tasks
+                  </div>
+                  <div className="px-3 pb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam facilis, voluptates error alias dolorem praesentium
+                    sit soluta iure incidunt labore explicabo eaque, quia
+                    architecto veritatis dolores, enim consequatur nihil ipsum.
+                  </div>
+                </div>
+                <div className="md:w-96 w-full p-5">
+                  <img
+                    src="https://image.flaticon.com/icons/svg/1330/1330216.svg"
+                    alt="step 3"
+                    className="object-scale-down"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start flex-row">
+            <div className="border-t-4 border-r-4 border-transparent">
+              <div className="w-16 ml-16 h-16 border-l-4 border-gray-300 border-dashed border-b-4 rounded-bl-full"></div>
+            </div>
+            <div className="border-t-4 border-transparent flex-auto">
+              <div className="h-16 border-b-4 border-gray-300 border-dashed"></div>
+            </div>
+            <div className="w-16 mt-16 mr-16 h-16 border-r-4 border-gray-300 border-dashed border-t-4 rounded-tr-full"></div>
+          </div>
+          <div className="flex flex-row-reverse">
+            <div className="hidden md:flex flex-col items-center">
+              <div className="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
+                <div className="text-3xl font-black text-gray-500">Step 4</div>
+                <div className="text-gray-500 text-sm">Implementation</div>
+              </div>
+            </div>
+            <div className="flex-auto border rounded  border-gray-300">
+              <div className="flex md:flex-row flex-col items-center">
+                <div className="flex-auto">
+                  <div className="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500">
+                    <span className="font-black">Step 4</span> - Implementation
+                  </div>
+                  <div className="p-3 text-3xl text-gray-800 font">
+                    Execute, impletement your solution
+                  </div>
+                  <div className="px-3 pb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam facilis, voluptates error alias dolorem praesentium
+                    sit soluta iure incidunt labore explicabo eaque, quia
+                    architecto veritatis dolores, enim consequatur nihil ipsum.
+                  </div>
+                </div>
+                <div className="md:w-96 w-full p-5">
+                  <img
+                    src="https://image.flaticon.com/icons/svg/1330/1330216.svg"
+                    alt="step 4"
+                    className="object-scale-down"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+      {/* <!-- Testimonials --> */}
+      <section className="bg-gray-100">
+        <div className="container mx-auto px-6 py-20">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+            Testimonials
+          </h2>
+          <div className="flex flex-wrap">
+            <div className="w-full md:w-1/3 px-2 mb-4">
+              <div className="bg-white rounded shadow py-2">
+                <p className="text-gray-800 text-base px-6 mb-5">
+                  Monitoring and tracking my health vitals anywhere I go and on
+                  any platform I use has never been easier.
+                </p>
+                <p className="text-gray-500 text-xs md:text-sm px-6">
+                  John Doe
+                </p>
+              </div>
+            </div>
+            <div className="w-full md:w-1/3 px-2 mb-4">
+              <div className="bg-white rounded shadow py-2">
+                <p className="text-gray-800 text-base px-6 mb-5">
+                  As an Athlete, this is the perfect product for me. I wear my
+                  Smart Health Monitoring Wristwatch everywhere i go, even in
+                  the bathroom since it's waterproof.
+                </p>
+                <p className="text-gray-500 text-xs md:text-sm px-6">
+                  Jane Doe
+                </p>
+              </div>
+            </div>
+            <div className="w-full md:w-1/3 px-2 mb-4">
+              <div className="bg-white rounded shadow py-2">
+                <p className="text-gray-800 text-base px-6 mb-5">
+                  I don't regret buying this wearble gadget. One of the best
+                  gadgets I own!.
+                </p>
+                <p className="text-gray-500 text-xs md:text-sm px-6">
+                  James Doe
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!--Call to Action--> */}
+      {/* style={{ backgroundColor: "#667eea" }} */}
+      <section 
+        style={{
+          background: "url('/matrix-bg.svg')",
+        }}
+      >
+        <div className="container mx-auto px-6 text-center py-20">
+          <h2 className="mb-6 text-4xl font-bold text-center text-white">
+            Limited in Stock
+          </h2>
+          <h3 className="my-4 text-2xl text-white">
+            Get yourself the Smart Health Monitoring Wristwatch!
+          </h3>
+          <button className="bg-white font-bold rounded-full mt-6 py-4 px-8 shadow-lg uppercase tracking-wider hover:bg-red-500 transform hover:-translate-y-1 hover:scale-110 transition duration-500 ease-in-out">
+            Pre Order
+          </button>
+        </div>
+      </section>
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+      {/* FAQ */}
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+      <section>
+        <div className="bg-white mx-auto p-6">
+          <div className="mb-4">
+            <div className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300">
+              Lorem ipsum dolor sit amet?
+              <span className="h-6 w-6 flex items-center justify-center text-teal-500">
+                <svg
+                  className="w-3 h-3 fill-current"
+                  viewBox="0 -192 469.33333 469"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m437.332031.167969h-405.332031c-17.664062 0-32 14.335937-32 32v21.332031c0 17.664062 14.335938 32 32 32h405.332031c17.664063 0 32-14.335938 32-32v-21.332031c0-17.664063-14.335937-32-32-32zm0 0" />
+                </svg>
+              </span>
+            </div>
+            <div className="p-3">
+              <p className="text-gray-600 mb-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque sed nulla porttitor, porttitor arcu ut, dictum
+                augue. Vestibulum consequat in urna in bibendum. Praesent sed
+                magna risus. Nunc elementum in mauris ac pharetra. Ut blandit ut
+                lorem sit amet rutrum. Vivamus ut purus fringilla, euismod nibh
+                ut, blandit.
+              </p>
+              <p className="text-gray-600">
+                Nunc ac efficitur sapien. Mauris eu lectus odio. Mauris ac erat
+                tortor. Nulla consectetur commodo justo. Pellentesque eget
+                ornare quam. Pellentesque sodales metus non semper luctus.
+                Praesent non ornare tellus, eget vulputate tellus. Donec luctus
+                non sapien sed semper.
+              </p>
+            </div>
+          </div>
+          <div className="mb-4">
+            <div className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300">
+              Lorem ipsum dolor sit amet?
+              <span className="h-6 w-6 flex items-center justify-center text-teal-500">
+                <svg
+                  className="w-3 h-3 fill-current"
+                  viewBox="0 0 469.33333 469.33333"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m437.332031 192h-160v-160c0-17.664062-14.335937-32-32-32h-21.332031c-17.664062 0-32 14.335938-32 32v160h-160c-17.664062 0-32 14.335938-32 32v21.332031c0 17.664063 14.335938 32 32 32h160v160c0 17.664063 14.335938 32 32 32h21.332031c17.664063 0 32-14.335937 32-32v-160h160c17.664063 0 32-14.335937 32-32v-21.332031c0-17.664062-14.335937-32-32-32zm0 0" />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div className="mb-4">
+            <div className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300">
+              Lorem ipsum dolor sit amet?
+              <span className="h-6 w-6 flex items-center justify-center text-teal-500">
+                <svg
+                  className="w-3 h-3 fill-current"
+                  viewBox="0 0 469.33333 469.33333"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m437.332031 192h-160v-160c0-17.664062-14.335937-32-32-32h-21.332031c-17.664062 0-32 14.335938-32 32v160h-160c-17.664062 0-32 14.335938-32 32v21.332031c0 17.664063 14.335938 32 32 32h160v160c0 17.664063 14.335938 32 32 32h21.332031c17.664063 0 32-14.335937 32-32v-160h160c17.664063 0 32-14.335937 32-32v-21.332031c0-17.664062-14.335937-32-32-32zm0 0" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+      {/* <!--Footer--> */}
+      <Footer />
+      {/* <footer className="bg-gray-100">
+        <div className="container mx-auto px-6 pt-10 pb-6">
+          <div className="flex flex-wrap">
+            <div className="w-full md:w-1/4 text-center md:text-left ">
+              <h5 className="uppercase mb-6 font-bold">Links</h5>
+              <ul className="mb-4">
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    FAQ
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Help
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Support
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="w-full md:w-1/4 text-center md:text-left ">
+              <h5 className="uppercase mb-6 font-bold">Legal</h5>
+              <ul className="mb-4">
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Terms
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Privacy
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="w-full md:w-1/4 text-center md:text-left ">
+              <h5 className="uppercase mb-6 font-bold">Social</h5>
+              <ul className="mb-4">
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Linkedin
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Twitter
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="w-full md:w-1/4 text-center md:text-left ">
+              <h5 className="uppercase mb-6 font-bold">Company</h5>
+              <ul className="mb-4">
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Official Blog
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li className="mt-2">
+                  <a
+                    href="#"
+                    className="hover:underline text-gray-600 hover:text-orange-500"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer> */}
+    </>
+  );
 }
