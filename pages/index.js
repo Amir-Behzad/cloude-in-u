@@ -2,8 +2,26 @@ import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/nav";
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [isOn1, setIsOn1] = useState(false);
+  const [isOn2, setIsOn2] = useState(false);
+  const [isOn3, setIsOn3] = useState(false);
+
+
+  const closeSvg = (
+    <svg className="w-3 h-3 fill-current" viewBox="0 -192 469.33333 469">
+      <path d="m437.332031.167969h-405.332031c-17.664062 0-32 14.335937-32 32v21.332031c0 17.664062 14.335938 32 32 32h405.332031c17.664063 0 32-14.335938 32-32v-21.332031c0-17.664063-14.335937-32-32-32zm0 0" />
+    </svg>
+  );
+
+  const openSvg = (
+    <svg className="w-3 h-3 fill-current" viewBox="0 0 469.33333 469.33333">
+      <path d="m437.332031 192h-160v-160c0-17.664062-14.335937-32-32-32h-21.332031c-17.664062 0-32 14.335938-32 32v160h-160c-17.664062 0-32 14.335938-32 32v21.332031c0 17.664063 14.335938 32 32 32h160v160c0 17.664063 14.335938 32 32 32h21.332031c17.664063 0 32-14.335937 32-32v-160h160c17.664063 0 32-14.335937 32-32v-21.332031c0-17.664062-14.335937-32-32-32zm0 0" />
+    </svg>
+  );
+
   return (
     <>
       <Head>
@@ -27,9 +45,7 @@ export default function Home() {
               <h2 className="text-4xl font-bold mb-2 text-yellow-300">
                 Bulut Sunucusu
               </h2>
-              <h3 className="text-2xl mb-8">
-                Güvenilir, Ekonomik, Kolay
-              </h3>
+              <h3 className="text-2xl mb-8">Güvenilir, Ekonomik, Kolay</h3>
               {/* bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full */}
               <button className="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 bg-blue-500 hover:bg-indigo-800 text-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
                 <Link href="/sign-up">
@@ -311,7 +327,7 @@ export default function Home() {
       </section>
       {/* <!--Call to Action--> */}
       {/* style={{ backgroundColor: "#667eea" }} */}
-      <section 
+      <section
         style={{
           background: "url('/matrix-bg.svg')",
         }}
@@ -334,21 +350,18 @@ export default function Home() {
       <section>
         <div className="bg-white mx-auto p-6">
           <div className="mb-4">
-            <div className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300">
-              Lorem ipsum dolor sit amet?
+            <div
+              onClick={() => setIsOn1(!isOn1)}
+              className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300"
+            >
+              1. Lorem ipsum dolor sit amet?
               <span className="h-6 w-6 flex items-center justify-center text-teal-500">
-                <svg
-                  className="w-3 h-3 fill-current"
-                  viewBox="0 -192 469.33333 469"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="m437.332031.167969h-405.332031c-17.664062 0-32 14.335937-32 32v21.332031c0 17.664062 14.335938 32 32 32h405.332031c17.664063 0 32-14.335938 32-32v-21.332031c0-17.664063-14.335937-32-32-32zm0 0" />
-                </svg>
+                {!isOn1 ? openSvg : closeSvg}
               </span>
             </div>
-            <div className="p-3">
+            <div className={`${isOn1 ? "show" : "hidden"} p-3`}>
               <p className="text-gray-600 mb-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                1.1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque sed nulla porttitor, porttitor arcu ut, dictum
                 augue. Vestibulum consequat in urna in bibendum. Praesent sed
                 magna risus. Nunc elementum in mauris ac pharetra. Ut blandit ut
@@ -356,7 +369,7 @@ export default function Home() {
                 ut, blandit.
               </p>
               <p className="text-gray-600">
-                Nunc ac efficitur sapien. Mauris eu lectus odio. Mauris ac erat
+                1.2. Nunc ac efficitur sapien. Mauris eu lectus odio. Mauris ac erat
                 tortor. Nulla consectetur commodo justo. Pellentesque eget
                 ornare quam. Pellentesque sodales metus non semper luctus.
                 Praesent non ornare tellus, eget vulputate tellus. Donec luctus
@@ -365,31 +378,59 @@ export default function Home() {
             </div>
           </div>
           <div className="mb-4">
-            <div className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300">
-              Lorem ipsum dolor sit amet?
+          <div
+              onClick={() => setIsOn2(!isOn2)}
+              className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300"
+            >
+              2. Lorem ipsum dolor sit amet?
               <span className="h-6 w-6 flex items-center justify-center text-teal-500">
-                <svg
-                  className="w-3 h-3 fill-current"
-                  viewBox="0 0 469.33333 469.33333"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="m437.332031 192h-160v-160c0-17.664062-14.335937-32-32-32h-21.332031c-17.664062 0-32 14.335938-32 32v160h-160c-17.664062 0-32 14.335938-32 32v21.332031c0 17.664063 14.335938 32 32 32h160v160c0 17.664063 14.335938 32 32 32h21.332031c17.664063 0 32-14.335937 32-32v-160h160c17.664063 0 32-14.335937 32-32v-21.332031c0-17.664062-14.335937-32-32-32zm0 0" />
-                </svg>
+                {!isOn2 ? openSvg : closeSvg}
               </span>
+            </div>
+            <div className={`${isOn2 ? "show" : "hidden"} p-3`}>
+              <p className="text-gray-600 mb-3">
+                2.1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque sed nulla porttitor, porttitor arcu ut, dictum
+                augue. Vestibulum consequat in urna in bibendum. Praesent sed
+                magna risus. Nunc elementum in mauris ac pharetra. Ut blandit ut
+                lorem sit amet rutrum. Vivamus ut purus fringilla, euismod nibh
+                ut, blandit.
+              </p>
+              <p className="text-gray-600">
+                2.2. Nunc ac efficitur sapien. Mauris eu lectus odio. Mauris ac erat
+                tortor. Nulla consectetur commodo justo. Pellentesque eget
+                ornare quam. Pellentesque sodales metus non semper luctus.
+                Praesent non ornare tellus, eget vulputate tellus. Donec luctus
+                non sapien sed semper.
+              </p>
             </div>
           </div>
           <div className="mb-4">
-            <div className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300">
-              Lorem ipsum dolor sit amet?
+          <div
+              onClick={() => setIsOn3(!isOn3)}
+              className="flex items-center justify-between bg-gray-200 pl-3 pr-2 py-3 w-full rounded text-gray-600 font-bold cursor-pointer hover:bg-gray-300"
+            >
+              3. Lorem ipsum dolor sit amet?
               <span className="h-6 w-6 flex items-center justify-center text-teal-500">
-                <svg
-                  className="w-3 h-3 fill-current"
-                  viewBox="0 0 469.33333 469.33333"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="m437.332031 192h-160v-160c0-17.664062-14.335937-32-32-32h-21.332031c-17.664062 0-32 14.335938-32 32v160h-160c-17.664062 0-32 14.335938-32 32v21.332031c0 17.664063 14.335938 32 32 32h160v160c0 17.664063 14.335938 32 32 32h21.332031c17.664063 0 32-14.335937 32-32v-160h160c17.664063 0 32-14.335937 32-32v-21.332031c0-17.664062-14.335937-32-32-32zm0 0" />
-                </svg>
+                {!isOn3 ? openSvg : closeSvg}
               </span>
+            </div>
+            <div className={`${isOn3 ? "show" : "hidden"} p-3`}>
+              <p className="text-gray-600 mb-3">
+                3.1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque sed nulla porttitor, porttitor arcu ut, dictum
+                augue. Vestibulum consequat in urna in bibendum. Praesent sed
+                magna risus. Nunc elementum in mauris ac pharetra. Ut blandit ut
+                lorem sit amet rutrum. Vivamus ut purus fringilla, euismod nibh
+                ut, blandit.
+              </p>
+              <p className="text-gray-600">
+                3.2. Nunc ac efficitur sapien. Mauris eu lectus odio. Mauris ac erat
+                tortor. Nulla consectetur commodo justo. Pellentesque eget
+                ornare quam. Pellentesque sodales metus non semper luctus.
+                Praesent non ornare tellus, eget vulputate tellus. Donec luctus
+                non sapien sed semper.
+              </p>
             </div>
           </div>
         </div>
